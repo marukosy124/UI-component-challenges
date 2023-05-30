@@ -1,0 +1,158 @@
+@use "src/themes/index.scss" as *;
+
+.Input {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &.fullWidth {
+      width: 100%;
+    }
+
+    &:focus-within {
+      .Input__label {
+        color: $blue_19 !important;
+
+        &.error {
+          color: $red_07 !important;
+        }
+      }
+    }
+
+    &:hover {
+      .Input__label {
+        color: $neutrals_09;
+      }
+    }
+  }
+
+  &__innerContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 18px 12px;
+    border-radius: 8px;
+    border: 1px solid $neutrals_05;
+
+    &.fullWidth {
+      width: 100%;
+    }
+
+    &.sm {
+      padding: 12px 10px;
+    }
+
+    &.error {
+      border-color: $red_07;
+    }
+
+    &:hover {
+      border-color: $neutrals_09;
+    }
+
+    &:focus-within {
+      border-color: $blue_19;
+
+      &.error {
+        border-color: $red_07;
+      }
+
+      .Input__label {
+        color: $blue_19;
+      }
+    }
+
+    &.disabled {
+      background-color: $neutrals_01;
+      border-color: $neutrals_02;
+      color: $neutrals_05;
+    }
+  }
+
+  &__label {
+    text-align: left;
+    font-size: 12px;
+    color: $neutrals_05;
+    position: absolute;
+    top: -18px;
+
+    &.error {
+      color: $red_07;
+    }
+  }
+
+  &__input {
+    box-sizing: border-box;
+    flex-grow: 1;
+    border: none;
+    overflow-y: hidden;
+    color: $neutrals_05;
+
+    &.multiline {
+      resize: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.error {
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: $neutrals_01;
+    }
+
+    &.fullWidth {
+      width: 100%;
+    }
+
+    &.with-startIcon {
+      padding-left: 38px;
+    }
+
+    &.with-endIcon {
+      padding-right: 38px;
+    }
+
+    .MultilineInput__placeholder {
+      color: $neutrals_05;
+    }
+  }
+
+  &__helperText {
+    color: $neutrals_05;
+    font-size: 10px;
+    padding-top: 6px;
+
+    &.error {
+      color: $red_07;
+    }
+  }
+
+  &__startIcon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: $neutrals_05;
+
+    &.multiline {
+      top: auto;
+    }
+  }
+
+  &__endIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: $neutrals_05;
+
+    &.multiline {
+      top: auto;
+    }
+  }
+}

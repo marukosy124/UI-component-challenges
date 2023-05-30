@@ -1,0 +1,24 @@
+@use "./variables" as *;
+@use "./colors.scss" as *;
+
+@font-face {
+  font-family: "Noto Sans JP", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+}
+
+body {
+  font-size: $font-size-default;
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  background-color: $white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
